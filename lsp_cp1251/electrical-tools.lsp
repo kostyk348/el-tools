@@ -1,0 +1,26 @@
+;; electrical-tools.lsp — загрузчик всех инструментов
+;; Загружать первой: (load "electrical-tools.lsp") — автоматом подгрузит остальные
+
+(defun el:load-all ()
+  (princ "\n; Загрузка Electrical Tools...")
+  (load "el-core.lsp")
+  (load "el-trace.lsp")
+  (load "el-check.lsp")
+  (load "el-diff.lsp")
+  (load "el-table.lsp")
+  (load "el-whatif.lsp")
+  (load "el-crossref.lsp")
+  (load "el-bonus.lsp")
+  (load "AW.LSP")
+  (load "summ2.lsp")
+  (load "wire.LSP")
+  (load "segment.lsp")
+  (load "WT.lsp")
+  (princ "\n; Electrical Tools загружены!")
+  (princ "\n; Топология: EL-TRACE, EL-CHECK, EL-WHATIF, EL-TABLE, EL-DIFF, EL-SAVE-SNAPSHOT, EL-GRAPH")
+  (princ "\n; Аудит: EL-COLOR-CHAINS, EL-LOOPS, EL-STATS, EL-HOTSPOTS, EL-BOTTLENECK, EL-CROSSREF")
+  (princ "\n; Спецификации: AW33, AW, DrawWire, WireTable, WireNodes, WireSegAddr, WT")
+  (princ)
+)
+
+(el:load-all)
