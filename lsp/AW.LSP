@@ -147,6 +147,21 @@
                )
               )
 
+              ;; метры: "5 м" -> *100 (в см)
+              ((vl-string-search " М" upperTxt)
+               (vlax-put-property regex 'Pattern "\\d+([\\.,]\\d+)?\\s*[мM](\\s|$)")
+               (setq matches (vlax-invoke-method regex 'Execute txt))
+               (if (> (vlax-get-property matches 'Count) 0)
+                 (vlax-for match matches
+                   (setq numStr (vlax-invoke-method (progn (vlax-put-property regex 'Pattern ",") regex) 'Replace (vlax-get-property match 'Value) "."))
+                   (vlax-put-property regex 'Pattern "\\d+([\\.,]\\d+)?\\s*[мM](\\s|$)")
+                   (setq numStr (vl-string-subst "" " м" numStr))
+                   (setq numStr (vl-string-subst "" " М" numStr))
+                   (setq lengthSum (+ lengthSum (* (atof numStr) 100.0)))
+                 )
+               )
+              )
+
               ((vl-some '(lambda (kw) (vl-string-search kw upperTxt)) std-colors)
                (if (= color "") (setq color txt)) ; Берем только первый цвет
               )
