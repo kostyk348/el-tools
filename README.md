@@ -1,10 +1,18 @@
+<div align="center">
+
+<img src="docs/banner.svg" alt="el-tools banner" width="1000">
+
 # Electrical Tools (el-tools)
+
+### AutoLISP-инструменты для работы с электрическими схемами в AutoCAD: трассировка цепей, дефектоскоп, симуляция разрывов, спецификации проводов.
 
 [![Release](https://img.shields.io/github/v/release/kostyk348/el-tools?sort=semver&color=blue)](https://github.com/kostyk348/el-tools/releases)
 [![Last commit](https://img.shields.io/github/last-commit/kostyk348/el-tools?branch=master)](https://github.com/kostyk348/el-tools/commits/master)
 
-AutoLISP-инструменты для работы с электрическими схемами в AutoCAD:
-трассировка цепей, дефектоскоп, симуляция разрывов, спецификации проводов.
+</div>
+
+---
+
 
 ## Установка
 
